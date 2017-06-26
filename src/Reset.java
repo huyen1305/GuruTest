@@ -1,4 +1,5 @@
 import org.junit.AfterClass;
+import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -22,6 +23,13 @@ public class Reset {
         driver.findElement(By.name("uid")).sendKeys("mngr84hh");
         driver.findElement(By.name("password")).sendKeys("agUvUjA");
         driver.findElement(By.xpath("//input[@type='reset']")).click();
+        try {
+            Assert.assertEquals(driver.findElement(By.name("uid")).getText(),"");
+            System.out.println("pass");
+        }
+        catch (Exception e) {
+            System.out.println("fail");
+        }
     }
     @AfterClass
     public static void cleanUp() {
