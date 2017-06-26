@@ -25,6 +25,7 @@ public class Reset {
         driver.findElement(By.xpath("//input[@type='reset']")).click();
         try {
             Assert.assertEquals(driver.findElement(By.name("uid")).getText(),"");
+            Assert.assertEquals(driver.findElement(By.name("password")).getText(),"");
             System.out.println("pass");
         }
         catch (Exception e) {
